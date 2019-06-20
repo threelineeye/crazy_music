@@ -1,16 +1,25 @@
 <template>
-  <div id="app">
+  <div id="app" @touchmove.prevent>
     <m-header></m-header>
-    <router-view/>
+    <tab></tab>
+    <keep-alive>
+      <router-view/>
+    </keep-alive>
+    <player></player>
   </div>
 </template>
 
 <script>
 import mHeader from 'components/m-header/m-header.vue'
+import Player from 'components/player/player'
+import Tab from 'components/tab/tab'
+
 export default {
   name: 'App',
   components: {
-    mHeader
+    mHeader,
+    Player,
+    Tab
   }
 }
 </script>
